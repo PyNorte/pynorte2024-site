@@ -19,21 +19,6 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
-inputs:
-  name:
-    description: 'Artifact name'
-    required: false
-    default: 'github-pages'
-  retention-days:
-    description: "Duration after which artifact will expire in days."
-    required: false
-    default: "1"
-
-outputs:
-  artifact_id:
-    description: "The ID of the artifact that was uploaded."
-    value: ${{ steps.upload-artifact.outputs.artifact-id }}
-
 jobs:
   deploy:
     if: github.repository == 'PyNorte/pynorte2024-site'
@@ -41,6 +26,8 @@ jobs:
       name: production
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    outputs:
+      artifact_id: ${{ steps.upload-artifact.outputs.artifact-id }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -62,14 +49,15 @@ jobs:
 
       - name: Upload artifact
         id: upload-artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist repository
           path: './dist'
-          name: ${{ inputs.name }}
-          retention-days: ${{ inputs.retention-days }}
-          if-no-files-found: error
+          name: 'github-pages'
+          retention-days: "1"
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: 'github-pages'
