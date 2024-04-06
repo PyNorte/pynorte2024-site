@@ -51,7 +51,12 @@ export function CodigoConduta() {
         <p className="mt-6 text-lg leading-loose">
           Se você se sentiu assediado, discriminado indevidamente ou humilhado,
           ou presenciou alguma destas atitudes, por favor entre em contato com a
-          Equipe de Resposta.
+          Equipe de Resposta. Para isso basta nos escrever no email{' '}
+          <a className="hover:underline" href="mailto:msm.ecp19@uea.edu.br">
+            pynorteam@gmail.com
+          </a>{' '}
+          com o assunto &quot;Violação do Código de Conduta&quot; relatando o
+          ocorrido.
         </p>
         <p className="mt-6 text-lg leading-loose">
           Havendo um relato de violação destes princípios, a Equipe de Resposta
