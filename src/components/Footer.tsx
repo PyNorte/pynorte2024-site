@@ -2,9 +2,9 @@ import { GrTwitter, GrInstagram, GrFacebook, GrLinkedin } from 'react-icons/gr'
 
 export function Footer() {
   return (
-    <footer className="flex flex-col items-start justify-between bg-zinc-900 px-8 py-12 md:flex-row md:px-28 lg:px-40">
+    <footer className="flex flex-col items-start justify-between bg-sunset-950 px-8 py-12 md:flex-row md:px-28 lg:px-40">
       <div className="space-y-8 md:mr-16">
-        <p className="max-w-md text-sm text-zinc-600 md:text-base">
+        <p className="max-w-md text-sm text-zinc-300 md:text-base">
           Python Norte é uma conferência sem fins lucrativos dirigida por
           voluntários para promover a linguagem de programação Python de código
           aberto. É apoiado pela Associação Python Brasil (APyB).
