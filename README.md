@@ -1,4 +1,7 @@
+![cover](https://github.com/PyNorte/pynorte2024-site/assets/71537090/773312c7-0078-42b2-a122-a06b9986375d)
+
 # Python Norte 2024
+
 
 Repositório do website do evento Python Norte 2023 construído pela comunidade de voluntários.
 
