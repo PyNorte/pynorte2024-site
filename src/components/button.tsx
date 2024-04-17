@@ -1,5 +1,6 @@
-import { cn } from '@/utils/merge-classes'
 import { ComponentProps } from 'react'
+
+import { cn } from '@/utils/merge-classes'
 
 interface ButtonProps extends ComponentProps<'button'> {}
 

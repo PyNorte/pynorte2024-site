@@ -1,8 +1,9 @@
+import './globals.css'
+
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import { Header } from '@/components/header'
 
-import './globals.css'
+import { Header } from '@/components/header'
 
 const inter = Poppins({
   weight: ['400', '500', '700'],
