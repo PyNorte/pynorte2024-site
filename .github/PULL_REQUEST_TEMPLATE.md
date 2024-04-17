@@ -1,12 +1,14 @@
 # Descrição
 
+<!-- 
 Inclua um resumo das alterações e qual problema foi corrigido. Inclua também motivação e/ou contextos relevantes. Liste todas as dependências necessárias para essa alteração.
+-->
 
 Fixes # (issue)
 
 ## Tipo de mudança 🏗️
 
-_Exclua as opções que não são relevantes._
+<!-- _Exclua as opções que não são relevantes._ -->
 
 Minha mudança é uma:
 
@@ -16,9 +18,9 @@ Minha mudança é uma:
 
 ## Como isso foi testado? 🧪
 
-Descreva os testes que você executou para verificar suas alterações.
+<!-- Descreva os testes que você executou para verificar suas alterações.
 Forneça instruções para que possamos reproduzir.
-Liste também todos os detalhes relevantes para sua configuração de teste.
+Liste também todos os detalhes relevantes para sua configuração de teste. -->
 
 ## Checklist da PR ✅
 
