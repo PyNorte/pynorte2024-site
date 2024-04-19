@@ -6,7 +6,7 @@ import { Button } from '@/components/button'
 export default function Home() {
   return (
     <div className="w-full">
-      <div className="flex w-full flex-col items-center gap-16 px-4 lg:px-16">
+      <div className="flex w-full flex-col items-center gap-16">
         <div className="grid grid-cols-1 gap-x-4 gap-y-8 lg:grid-cols-2">
           <Image
             className="h-44 w-auto place-self-center md:h-52"

@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 
+import { Footer } from '@/components/footer'
 import { Header } from '@/components/header'
 
 const inter = Poppins({
@@ -24,9 +25,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt" className={inter.variable} suppressHydrationWarning>
-      <body className="min-h-screen w-full bg-sunset-950 text-zinc-50 antialiased">
+      <body className="w-full bg-sunset-950 text-zinc-50 antialiased">
         <Header />
-        <main className="mx-auto max-w-screen-2xl py-16">{children}</main>
+
+        <main className="mx-auto min-h-screen max-w-screen-2xl px-6 py-16 lg:px-16">
+          {children}
+        </main>
+
+        <Footer />
       </body>
     </html>
   )
