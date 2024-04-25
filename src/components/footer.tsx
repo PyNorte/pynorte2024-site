@@ -1,8 +1,10 @@
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
+import { Facebook, Instagram, Linkedin } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import brandLight from '@/assets/brand-light.svg'
+
+import { TwitterX } from './twitter-x'
 
 export function Footer() {
   return (
@@ -36,7 +38,7 @@ export function Footer() {
             </Link>
 
             <Link href="http://twitter.com/pynorte" target="_blank">
-              <Twitter className="size-8 text-white" />
+              <TwitterX className="size-8 fill-white" />
             </Link>
 
             <Link
