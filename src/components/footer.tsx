@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import brandLight from '@/assets/brand-light.svg'
 
@@ -23,10 +24,27 @@ export function Footer() {
           </p>
 
           <div className="flex gap-8">
-            <Facebook className="size-8 text-white" />
-            <Instagram className="size-8 text-white" />
-            <Twitter className="size-8 text-white" />
-            <Linkedin className="size-8 text-white" />
+            <Link href="https://www.facebook.com/pynorte" target="_blank">
+              <Facebook className="size-8 text-white" />
+            </Link>
+
+            <Link
+              href="https://www.instagram.com/pynorteoficial/"
+              target="_blank"
+            >
+              <Instagram className="size-8 text-white" />
+            </Link>
+
+            <Link href="http://twitter.com/pynorte" target="_blank">
+              <Twitter className="size-8 text-white" />
+            </Link>
+
+            <Link
+              href="http://www.linkedin.com/company/pynorte/"
+              target="_blank"
+            >
+              <Linkedin className="size-8 text-white" />
+            </Link>
           </div>
         </div>
 
