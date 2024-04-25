@@ -24,7 +24,7 @@ const schedules = [
     description:
       'São pessoas de destaque convidadas para se apresentarem e exporem suas ideias no evento, assim como tendências para o futuro da linguagem Python com o intuito de alavancar o crescimento tecnológico regional.',
     icon: abstractFigure2,
-    color: 'text-animal-400',
+    color: 'text-animals-400',
   },
   {
     id: 3,
