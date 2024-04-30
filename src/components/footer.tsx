@@ -9,7 +9,7 @@ import { TwitterX } from './twitter-x'
 export function Footer() {
   return (
     <footer className="border-t border-sunset-800">
-      <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-16 px-6 py-8 md:grid-cols-2 md:justify-items-end lg:px-16">
+      <div className="mx-auto grid max-w-screen-2xl grid-cols-1 gap-16 px-8 py-8 md:grid-cols-2 md:justify-items-end lg:px-16">
         <div className="space-y-8">
           <Image
             className="h-28 w-auto"
@@ -54,7 +54,15 @@ export function Footer() {
           <strong className="text-2xl">Links Rápidos</strong>
 
           <ul className="space-y-3 text-lg text-zinc-400">
-            <li>Adquira seu ingresso</li>
+            <li>
+              <Link
+                href="https://www.even3.com.br/python-norte-2024-446721/"
+                target="_blank"
+              >
+                Adquira seu ingresso
+              </Link>
+            </li>
+
             <li>Seja um Patrocinador</li>
             <li>Local do Evento</li>
           </ul>

@@ -8,14 +8,15 @@ interface LinkTitleToContentProps {
 
 export function LinkTitleToContent({ title, hrefId }: LinkTitleToContentProps) {
   return (
-    <div className="group -ml-4 flex gap-1 lg:-ml-9">
+    <div className="group relative">
       <Link
         href={'#'.concat(hrefId)}
-        className="rounded-md border-2 border-transparent p-1 opacity-0 transition-all hover:border-zinc-300/50 group-hover:opacity-100"
+        className="absolute -left-6 top-1/2 -translate-y-1/2 rounded-md border-2 border-transparent p-0.5 opacity-0 hover:border-zinc-300/50 group-hover:opacity-100 lg:-left-10 lg:p-1"
       >
-        <LinkIcon className="size-6 text-zinc-300" />
+        <LinkIcon className="size-4 text-zinc-300 lg:size-6" />
       </Link>
-      <h2 className="text-3xl font-bold lg:text-4xl">{title}</h2>
+
+      <h2 className="text-2xl font-bold lg:text-4xl">{title}</h2>
     </div>
   )
 }

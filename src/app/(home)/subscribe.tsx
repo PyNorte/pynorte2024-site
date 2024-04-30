@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import brand from '@/assets/brand.png'
 import { Button } from '@/components/button'
@@ -26,7 +27,12 @@ export function Subscribe() {
         </div>
       </div>
 
-      <Button>Inscreva-se</Button>
+      <Link
+        href="https://www.even3.com.br/python-norte-2024-446721/"
+        target="_blank"
+      >
+        <Button>Inscreva-se</Button>
+      </Link>
     </div>
   )
 }

@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className="w-full bg-sunset-950 text-zinc-50 antialiased">
         <Header />
 
-        <main className="mx-auto max-w-screen-2xl px-6 py-32 lg:px-16">
+        <main className="mx-auto max-w-screen-2xl px-8 py-32 lg:px-16">
           {children}
         </main>
 

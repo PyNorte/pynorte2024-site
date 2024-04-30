@@ -37,7 +37,7 @@ export function Header() {
   }, [])
 
   return (
-    <header className="sticky top-0 bg-sunset-400 px-9 py-8 md:px-28">
+    <header className="sticky top-0 z-10 bg-sunset-400 px-8 py-8 md:px-28">
       <div className="mx-auto flex max-w-screen-2xl items-center justify-between gap-16">
         <Link href={'/'}>
           <Image
