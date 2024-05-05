@@ -91,13 +91,15 @@ export function Sponsors() {
                 {categoryWithSponsors.map(category => (
                     <div key={category.id} className="flex flex-col items-center mb-4 lg:mb-0">
                         {sponsors.filter(sponsor => sponsor.category === category && sponsor.category.title !== "APOIO").map(sponsor => (
-                            <Image
-                                className="h-28 w-auto mb-2"
-                                src={sponsor.image}
-                                alt={sponsor.title}
-                                width={172}
-                                height={120}
-                            />
+                            <div className="bg-sunset-50 p-6 rounded mb-4">
+                                <Image
+                                    className="h-28 w-auto"
+                                    src={sponsor.image}
+                                    alt={sponsor.title}
+                                    width={172}
+                                    height={120}
+                                />
+                            </div>
                         ))}
                         {category.title !== "APOIO" && <Badge color={category.color} title={category.title} />}
                     </div>
@@ -106,13 +108,15 @@ export function Sponsors() {
             {apoioExists && (
                 <div className="grid gap-3 lg:grid-cols-1 justify-items-center">
                     {apoioSponsers.map(sponsor => (
-                        <Image
-                            className="h-28 w-auto mb-2"
-                            src={sponsor.image}
-                            alt={sponsor.title}
-                            width={172}
-                            height={120}
-                        />
+                        <div className="bg-sunset-50 p-6 rounded mb-4">
+                            <Image
+                                className="h-28 w-auto"
+                                src={sponsor.image}
+                                alt={sponsor.title}
+                                width={172}
+                                height={120}
+                            />
+                        </div>
                     ))}
                     <Badge title={categories[3].title} color={categories[3].color} />
                 </div>
