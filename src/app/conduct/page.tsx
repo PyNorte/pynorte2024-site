@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function CodeOfConduct() {
   return (
     <div className="w-full space-y-4 text-base lg:text-lg">
@@ -49,6 +51,18 @@ export default function CodeOfConduct() {
         palestras e ações promocionais de patrocinadores. Se você se sentiu
         assediado, discriminado indevidamente ou humilhado, ou presenciou alguma
         destas atitudes, por favor entre em contato com a Equipe de Resposta.
+        Para isso basta nos escrever no email{' '}
+        <Link
+          className="text-river-400 hover:underline"
+          href="mailto:msm.ecp19@uea.edu.br"
+        >
+          pynorteam@gmail.com
+        </Link>{' '}
+        com o assunto &quot;Violação do Código de Conduta&quot; relatando o
+        ocorrido.
+      </p>
+
+      <p className="leading-loose">
         Havendo um relato de violação destes princípios, a Equipe de Resposta
         realizará a devida análise e, quando necessário, tomará as ações para
         impedir a reincidência. Estas ações podem, mas não se restringem nem
