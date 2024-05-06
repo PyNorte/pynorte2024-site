@@ -5,7 +5,7 @@ export function About() {
     <div className="space-y-4">
       <LinkTitleToContent hrefId="about-python" title="Sobre a Python" />
 
-      <p className="text-base lg:text-lg">
+      <p className="text-base leading-relaxed lg:text-lg">
         Durante todo o processo de concepção da nossa conferência (desde a
         formação da equipe organizadora até a seleção do local, estruturação do
         programa de palestras e convites de palestrantes principais), nossa

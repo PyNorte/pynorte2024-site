@@ -11,7 +11,7 @@ import { cn } from '@/utils/merge-classes'
 
 const links = [
   { id: 1, label: 'Home', href: '/' },
-  { id: 2, label: 'Código de conduta', href: '#' },
+  { id: 2, label: 'Código de conduta', href: '/conduct' },
   { id: 3, label: 'Keynotes', href: '#' },
   { id: 4, label: 'FAQ', href: '#' },
 ]
