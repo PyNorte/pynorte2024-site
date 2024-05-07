@@ -2,84 +2,83 @@ import { Badge } from "@/components/badge";
 import { LinkTitleToContent } from "@/components/link-title-to-content";
 
 import icetUfam from '@/assets/logo_icet.png'; import Image from "next/image";
-1
 
-const categories = [
-    {
+const categories = {
+    OURO: {
         id: 1,
         title: "OURO",
         color: "bg-sunset-500"
     },
-    {
+    PRATA: {
         id: 2,
         title: "PRATA",
         color: "bg-river-400"
     },
-    {
+    BRONZE: {
         id: 3,
         title: "BRONZE",
         color: "bg-sunset-700"
     },
-    {
+    APOIO: {
         id: 4,
         title: "APOIO",
         color: "bg-forest-800"
     },
-];
+};
 
 const sponsors = [
     // {
     //     id: 1,
     //     title: "Python",
-    //     category: categories[0],
+    //     category: categories.OURO,
     //     image: '',
     // },
     // {
     //     id: 2,
     //     title: "Python",
-    //     category: categories[0],
+    //     category: categories.OURO,
     //     image: '',
     // },
     // {
     //     id: 4,
     //     title: "Python",
-    //     category: categories[1],
+    //     category: categories.PRATA,
     //     image: '',
     // },
     // {
     //     id: 5,
     //     title: "Python",
-    //     category: categories[1],
+    //     category: categories.PRATA,
     //     image: '',
     // },
     // {
     //     id: 7,
     //     title: "Python",
-    //     category: categories[2],
+    //     category: categories.BRONZE,
     //     image: '',
     // },
     // {
     //     id: 8,
     //     title: "Python",
-    //     category: categories[2],
+    //     category: categories.BRONZE,
     //     image: '',
     // },
     {
         id: 10,
         title: "ICET/UFAM",
-        category: categories[3],
+        category: categories.APOIO,
         image: icetUfam
     },
     // {
     //     id: 11,
     //     title: "Python",
-    //     category: categories[3],
+    //     category: categories.APOIO,
     //     image: '',
     // },
 ]
 
 export function Sponsors() {
-    const categoryWithSponsors = categories.filter(category => sponsors.some(sponsor => sponsor.category == category));
+    const categoryWithSponsors = Object.values(categories).filter(category => sponsors.some(sponsor => sponsor.category == category));
     const apoioExists = categoryWithSponsors.some(category => category.title === "APOIO");
     const apoioSponsers = sponsors.filter(sponsor => sponsor.category.title === "APOIO");
 
@@ -108,7 +107,7 @@ export function Sponsors() {
             {apoioExists && (
                 <div className="grid gap-3 lg:grid-cols-1 justify-items-center">
                     {apoioSponsers.map(sponsor => (
-                        <div className="bg-sunset-50 p-6 rounded mb-4">
+                        <div key={sponsor.id} className="bg-sunset-50 p-6 rounded mb-4">
                             <Image
                                 className="h-28 w-auto"
                                 src={sponsor.image}
@@ -118,7 +117,7 @@ export function Sponsors() {
                             />
                         </div>
                     ))}
-                    <Badge title={categories[3].title} color={categories[3].color} />
+                    <Badge title={categories.APOIO.title} color={categories.APOIO.color} />
                 </div>
             )}
         </div>
