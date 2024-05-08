@@ -1,125 +1,78 @@
-import { Badge } from "@/components/badge";
-import { LinkTitleToContent } from "@/components/link-title-to-content";
+import Image from 'next/image'
 
-import icetUfam from '@/assets/logo_icet.png'; import Image from "next/image";
+import icetUfam from '@/assets/sponsors/logo-icet.png'
+import { Badge } from '@/components/badge'
+import { LinkTitleToContent } from '@/components/link-title-to-content'
 
-const categories = {
-    OURO: {
-        id: 1,
-        title: "OURO",
-        color: "bg-sunset-500"
-    },
-    PRATA: {
-        id: 2,
-        title: "PRATA",
-        color: "bg-river-400"
-    },
-    BRONZE: {
-        id: 3,
-        title: "BRONZE",
-        color: "bg-sunset-700"
-    },
-    APOIO: {
-        id: 4,
-        title: "APOIO",
-        color: "bg-forest-800"
-    },
-};
+// const sponsors = [
+//     {
+//       id: 1,
+//       name: 'ICET UFAM',
+//       image: icetUfam,
+//       category: 'OURO',
+//       color: 'bg-sunset-500',
+//     },
+// ]
 
-const sponsors = [
-    // {
-    //     id: 1,
-    //     title: "Python",
-    //     category: categories.OURO,
-    //     image: '',
-    // },
-    // {
-    //     id: 2,
-    //     title: "Python",
-    //     category: categories.OURO,
-    //     image: '',
-    // },
-    // {
-    //     id: 4,
-    //     title: "Python",
-    //     category: categories.PRATA,
-    //     image: '',
-    // },
-    // {
-    //     id: 5,
-    //     title: "Python",
-    //     category: categories.PRATA,
-    //     image: '',
-    // },
-    // {
-    //     id: 7,
-    //     title: "Python",
-    //     category: categories.BRONZE,
-    //     image: '',
-    // },
-    // {
-    //     id: 8,
-    //     title: "Python",
-    //     category: categories.BRONZE,
-    //     image: '',
-    // },
-    {
-        id: 10,
-        title: "ICET/UFAM",
-        category: categories.APOIO,
-        image: icetUfam
-    },
-    // {
-    //     id: 11,
-    //     title: "Python",
-    //     category: categories.APOIO,
-    //     image: '',
-    // },
+const supporters = [
+  {
+    id: 1,
+    name: 'ICET UFAM',
+    image: icetUfam,
+  },
 ]
 
 export function Sponsors() {
-    const categoryWithSponsors = Object.values(categories).filter(category => sponsors.some(sponsor => sponsor.category == category));
-    const apoioExists = categoryWithSponsors.some(category => category.title === "APOIO");
-    const apoioSponsers = sponsors.filter(sponsor => sponsor.category.title === "APOIO");
+  return (
+    <div className="space-y-12 text-center lg:text-left">
+      <LinkTitleToContent title="Patrocinadores" hrefId="sponsors" />
 
-    return (
-        <div className="space-y-12 text-center lg:text-left">
-            <LinkTitleToContent title="Patrocinadores" hrefId="sponsors" />
-
-            <div className="grid gap-3 lg:grid-cols-3 justify-items-center">
-                {categoryWithSponsors.map(category => (
-                    <div key={category.id} className="flex flex-col items-center mb-4 lg:mb-0">
-                        {sponsors.filter(sponsor => sponsor.category === category && sponsor.category.title !== "APOIO").map(sponsor => (
-                            <div className="bg-sunset-50 p-6 rounded mb-4">
-                                <Image
-                                    className="h-28 w-auto"
-                                    src={sponsor.image}
-                                    alt={sponsor.title}
-                                    width={172}
-                                    height={120}
-                                />
-                            </div>
-                        ))}
-                        {category.title !== "APOIO" && <Badge color={category.color} title={category.title} />}
-                    </div>
-                ))}
+      <div className="grid justify-items-center gap-x-3 gap-y-6 lg:grid-cols-3">
+        {/* {sponsors.map((sponsor) => {
+          return (
+            <div
+              key={sponsor.id}
+              className="mb-4 flex flex-col items-center lg:mb-0"
+            >
+              <div className="mb-4 rounded bg-sunset-50 p-6">
+                <Image
+                  className="h-28 w-auto"
+                  src={sponsor.image}
+                  alt={sponsor.name}
+                  width={172}
+                  height={120}
+                />
+              </div>
+              <Badge className={sponsor.color}>{sponsor.category}</Badge>
             </div>
-            {apoioExists && (
-                <div className="grid gap-3 lg:grid-cols-1 justify-items-center">
-                    {apoioSponsers.map(sponsor => (
-                        <div key={sponsor.id} className="bg-sunset-50 p-6 rounded mb-4">
-                            <Image
-                                className="h-28 w-auto"
-                                src={sponsor.image}
-                                alt={sponsor.title}
-                                width={172}
-                                height={120}
-                            />
-                        </div>
-                    ))}
-                    <Badge title={categories.APOIO.title} color={categories.APOIO.color} />
+          )
+        })} */}
+      </div>
+
+      <div className="w-full text-center">
+        <Badge className="bg-forest-800">APOIO</Badge>
+
+        <div className="mt-8 grid justify-items-center gap-3 lg:grid-cols-3">
+          {supporters.map((supporter) => {
+            return (
+              <div
+                key={supporter.id}
+                className="mb-4 flex flex-col items-center lg:mb-0"
+              >
+                <div className="mb-4 rounded bg-sunset-50 p-6">
+                  <Image
+                    className="h-28 w-auto"
+                    src={supporter.image}
+                    alt={supporter.name}
+                    width={172}
+                    height={120}
+                  />
                 </div>
-            )}
+              </div>
+            )
+          })}
         </div>
-    );
+      </div>
+    </div>
+  )
 }

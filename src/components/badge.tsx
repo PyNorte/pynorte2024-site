@@ -1,13 +1,17 @@
-import { cn } from "@/utils/merge-classes";
-import { title } from "process";
+import { ComponentProps } from 'react'
 
-interface Props {
-    color: string, 
-    title: string
-}
+import { cn } from '@/utils/merge-classes'
 
-export function Badge({ color, title }: Props) {
-    return (
-        <span className={`rounded-full ${color} w-min py-2 px-4 text-center font-bold`}>{title}</span>
-    );
+interface BadgeProps extends ComponentProps<'span'> {}
+
+export function Badge({ className, ...props }: BadgeProps) {
+  return (
+    <span
+      className={cn(
+        'w-min rounded-full px-4 py-2 text-center font-bold',
+        className,
+      )}
+      {...props}
+    />
+  )
 }
