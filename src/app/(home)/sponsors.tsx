@@ -52,7 +52,7 @@ export function Sponsors() {
       <div className="w-full text-center">
         <Badge className="bg-forest-800">APOIO</Badge>
 
-        <div className="mt-8 grid justify-items-center gap-3 lg:grid-cols-3">
+        <div className="mt-8 flex items-center justify-center gap-8">
           {supporters.map((supporter) => {
             return (
               <div
