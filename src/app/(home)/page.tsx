@@ -1,4 +1,5 @@
 import { About } from './about'
+import { Local } from './local'
 import { Schedule } from './schedule'
 import { Sponsors } from './sponsors'
 import { Subscribe } from './subscribe'
@@ -18,6 +19,10 @@ export default function Home() {
 
       <div id="sponsors" className="pt-32">
         <Sponsors />
+      </div>
+
+      <div id="local" className="pt-32">
+        <Local />
       </div>
     </div>
   )
