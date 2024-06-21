@@ -1,3 +1,5 @@
+import FAQList from '@/components/FAQ/FAQList'
+
 import { About } from './about'
 import { Schedule } from './schedule'
 import { Sponsors } from './sponsors'
@@ -18,6 +20,9 @@ export default function Home() {
 
       <div id="sponsors" className="pt-32">
         <Sponsors />
+      </div>
+      <div id="FAQList" className="pt-32">
+        <FAQList />
       </div>
     </div>
   )
