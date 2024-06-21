@@ -35,7 +35,7 @@
 }
 
 .faq-answer.open {
-  max-height: 200px; /* Ajuste conforme necessário */
+  max-height: 1500px; /* Ajuste conforme necessário */
   padding: 16px;
   opacity: 1;
 }
