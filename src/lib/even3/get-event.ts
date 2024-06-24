@@ -39,15 +39,17 @@ interface Data {
   count: number
 }
 
-interface GetEventResponse {
+export interface GetEventResponse {
   event: Event
 }
 
 export async function getEvent(): Promise<GetEventResponse> {
-  const response = await even3api('/event')
+  const response = await even3api('/event');
   const { data } = (await response.json()) as Data
 
   const [event] = data.filter((item) => item.id_event === EVENT_ID)
 
   return { event }
 }
+
+
