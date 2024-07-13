@@ -1,24 +1,61 @@
-import Image from 'next/image'
+import { StaticImageData } from 'next/image'
 
+import fpf from '@/assets/sponsors/logo-fpf-tech.svg'
 import icetUfam from '@/assets/sponsors/logo-icet.png'
+import vinta from '@/assets/sponsors/logo-vinta.png'
 import { Badge } from '@/components/badge'
 import { LinkTitleToContent } from '@/components/link-title-to-content'
 
-// const sponsors = [
-//     {
-//       id: 1,
-//       name: 'ICET UFAM',
-//       image: icetUfam,
-//       category: 'OURO',
-//       color: 'bg-sunset-500',
-//     },
-// ]
+interface Sponsor {
+  name: string
+  image: StaticImageData
+  height?: string
+  width?: string
+}
 
-const supporters = [
+interface Quota {
+  title: 'OURO' | 'PRATA' | 'BRONZE' | 'APOIO'
+  sponsors: Sponsor[]
+  bgColor: string
+}
+
+const quotas: Quota[] = [
   {
-    id: 1,
-    name: 'ICET UFAM',
-    image: icetUfam,
+    title: 'OURO',
+    bgColor: 'bg-sunset-500',
+    sponsors: [],
+  },
+  {
+    title: 'PRATA',
+    bgColor: 'bg-river-400',
+    sponsors: [],
+  },
+  {
+    title: 'BRONZE',
+    bgColor: 'bg-sunset-700',
+    sponsors: [
+      {
+        name: 'Vinta',
+        image: vinta,
+        height: 'max-h-12',
+      },
+      {
+        name: 'FPF Tech',
+        image: fpf,
+        height: 'max-h-14',
+      },
+    ],
+  },
+  {
+    title: 'APOIO',
+    bgColor: 'bg-forest-800',
+    sponsors: [
+      {
+        name: 'ICET UFAM',
+        image: icetUfam,
+        height: 'max-h-32',
+      },
+    ],
   },
 ]
 
@@ -26,52 +63,30 @@ export function Sponsors() {
   return (
     <div className="space-y-12 text-center lg:text-left">
       <LinkTitleToContent title="Patrocinadores" hrefId="sponsors" />
-
-      <div className="grid justify-items-center gap-x-3 gap-y-6 lg:grid-cols-3">
-        {/* {sponsors.map((sponsor) => {
-          return (
-            <div
-              key={sponsor.id}
-              className="mb-4 flex flex-col items-center lg:mb-0"
-            >
-              <div className="mb-4 rounded bg-sunset-50 p-6">
-                <Image
-                  className="h-28 w-auto"
-                  src={sponsor.image}
-                  alt={sponsor.name}
-                  width={172}
-                  height={120}
-                />
-              </div>
-              <Badge className={sponsor.color}>{sponsor.category}</Badge>
-            </div>
-          )
-        })} */}
-      </div>
-
-      <div className="w-full text-center">
-        <Badge className="bg-forest-800">APOIO</Badge>
-
-        <div className="mt-8 flex items-center justify-center gap-8">
-          {supporters.map((supporter) => {
-            return (
+      <div className=" flex w-full flex-col gap-20 text-center">
+        {quotas.map(
+          ({ title, bgColor, sponsors }) =>
+            sponsors.length > 0 && (
               <div
-                key={supporter.id}
-                className="mb-4 flex flex-col items-center lg:mb-0"
+                className="flex flex-col items-center justify-center gap-10"
+                key={title}
               >
-                <div className="mb-4 rounded bg-sunset-50 p-6">
-                  <Image
-                    className="h-28 w-auto"
-                    src={supporter.image}
-                    alt={supporter.name}
-                    width={172}
-                    height={120}
-                  />
+                <Badge className={`${bgColor}`}>{title}</Badge>
+
+                <div className="flex w-full flex-wrap items-center justify-center gap-10">
+                  {sponsors.map(({ image, name, height, width }) => (
+                    <img
+                      className={`${height || ' '} ${width || ' '}`}
+                      src={image.src}
+                      alt={name}
+                      title={name}
+                      key={name}
+                    />
+                  ))}
                 </div>
               </div>
-            )
-          })}
-        </div>
+            ),
+        )}
       </div>
     </div>
   )
