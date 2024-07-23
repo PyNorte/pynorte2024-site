@@ -1,7 +1,9 @@
 import { StaticImageData } from 'next/image'
 
-import fpf from '@/assets/sponsors/logo-fpf-tech.svg'
+import bemol from '@/assets/sponsors/logo-bemol.png'
 import icetUfam from '@/assets/sponsors/logo-icet.png'
+import fpf from '@/assets/sponsors/logo-fpf-tech.svg'
+import psf from '@/assets/sponsors/logo-psf.svg'
 import vinta from '@/assets/sponsors/logo-vinta.png'
 import { Badge } from '@/components/badge'
 import { LinkTitleToContent } from '@/components/link-title-to-content'
@@ -14,16 +16,33 @@ interface Sponsor {
 }
 
 interface Quota {
-  title: 'OURO' | 'PRATA' | 'BRONZE' | 'APOIO'
+  title: 'DIAMANTE' | 'OURO' | 'PRATA' | 'BRONZE' | 'APOIO'
   sponsors: Sponsor[]
   bgColor: string
 }
 
 const quotas: Quota[] = [
   {
+    title: 'DIAMANTE',
+    bgColor: 'bg-river-500',
+    sponsors: [
+      {
+        name: 'Python Software Foundation',
+        image: psf,
+        height: 'max-h-32',
+      },
+    ],
+  },
+  {
     title: 'OURO',
     bgColor: 'bg-sunset-500',
-    sponsors: [],
+    sponsors: [
+      {
+        name: 'Bemol',
+        image: bemol,
+        height: 'max-h-28',
+      },
+    ],
   },
   {
     title: 'PRATA',
@@ -63,12 +82,12 @@ export function Sponsors() {
   return (
     <div className="space-y-12 text-center lg:text-left">
       <LinkTitleToContent title="Patrocinadores" hrefId="sponsors" />
-      <div className=" flex w-full flex-col gap-20 text-center">
+      <div className=" flex w-full flex-col gap-24 text-center">
         {quotas.map(
           ({ title, bgColor, sponsors }) =>
             sponsors.length > 0 && (
               <div
-                className="flex flex-col items-center justify-center gap-10"
+                className="flex flex-col items-center justify-center gap-8"
                 key={title}
               >
                 <Badge className={`${bgColor}`}>{title}</Badge>
