@@ -1,8 +1,8 @@
 import { StaticImageData } from 'next/image'
 
 import bemol from '@/assets/sponsors/logo-bemol.png'
-import icetUfam from '@/assets/sponsors/logo-icet.png'
 import fpf from '@/assets/sponsors/logo-fpf-tech.svg'
+import icetUfam from '@/assets/sponsors/logo-icet.png'
 import psf from '@/assets/sponsors/logo-psf.svg'
 import vinta from '@/assets/sponsors/logo-vinta.png'
 import { Badge } from '@/components/badge'

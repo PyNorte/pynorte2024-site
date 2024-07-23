@@ -5,7 +5,6 @@ import abstractFigure1 from '@/assets/abstract-1.svg'
 import abstractFigure2 from '@/assets/abstract-2.svg'
 import abstractFigure3 from '@/assets/abstract-3.svg'
 import abstractFigure4 from '@/assets/abstract-4.svg'
-import { Button } from '@/components/button'
 import { LinkTitleToContent } from '@/components/link-title-to-content'
 import { cn } from '@/utils/merge-classes'
 
@@ -75,9 +74,7 @@ export function Schedule() {
         <Link
           href="https://docs.google.com/forms/d/e/1FAIpQLSftmJ6pNJ7qPgKfNre0ebT5zGgHtyIMiyoZVr1Aj24t-7BPag/viewform"
           target="_blank"
-        >
-          <Button>Submeter atividades</Button>
-        </Link>
+        ></Link>
       </div>
     </div>
   )
