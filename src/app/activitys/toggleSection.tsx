@@ -1,5 +1,4 @@
 "use client"
-
 import ActivityPerDay from './activityPerDay';
 import { Schedule } from './typeSession'
 import { useState } from "react";
@@ -9,7 +8,10 @@ interface ToggleSectionProps {
 }
 
 export default function ToggleSection({dataSession}: ToggleSectionProps){
-  const [selectedButton, setSelectedButton] = useState("28");
+  const dateNow = new Date()
+  const date = dateNow.getDate() == 28 ? "28": "27";
+  
+  const [selectedButton, setSelectedButton] = useState(date);
   
   const daySelected = "bg-sunset-900 button-2 p-3 rounded-xl";
   const dayNotSelected = "p-3 pr-4 text-sunset-900 font-semibold";

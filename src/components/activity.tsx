@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Session } from "@/app/atividades/typeSession";
+import { Session } from "@/app/activitys/typeSession";
 
 import instagramIcon from "@/assets/socialMedia/instagram.png";
 import linkIcon from "@/assets/socialMedia/link.png";
 import linkedinIcon from "@/assets/socialMedia/linkdin.png";
+import { Facebook } from 'lucide-react';
 
 interface ActivityInfos {
   activitys: Session;
 }
 
+type SocialMediaState = {
+  facebook: boolean;
+  linkedin: boolean;
+  site: boolean;
+}[];
 const Activity: React.FC<ActivityInfos> = ({ activitys }) => {
+  const [socialMedia, setSocialMeria] = useState<SocialMediaState>([])
+
+  useEffect(() => {
+    const newSocialMedia = activitys.speakers.map(social => ({
+      facebook: social.facebook != null,
+      linkedin: social.linkedin != null,
+      site: social.lattes != null,
+    }));
+  
+    setSocialMeria(newSocialMedia);
+  }, [activitys.speakers]);
+
   return (
     <section className="my-4 flex h-auto md:w-80 xl:w-96 w-72 flex-col items-center rounded-2xl  bg-sunset-900 p-4">
       <h1 className="text-2xl font-semibold">{activitys.title}</h1>
@@ -39,7 +57,7 @@ const Activity: React.FC<ActivityInfos> = ({ activitys }) => {
       <div className="my-6 h-px w-full bg-white opacity-70"></div>
 
       <section className="flex w-full flex-col justify-between">
-        {activitys.speakers.map((speaker) => (
+        {activitys.speakers.map((speaker, index) => (
           <div key={speaker.id_speaker}>
             <div className="flex">
               <img
@@ -53,16 +71,24 @@ const Activity: React.FC<ActivityInfos> = ({ activitys }) => {
               </div>
             </div>
             <div className="flex justify-end m-4 gap-2">
-              <a className="cursor-pointer" href={speaker.facebook}>
-                <Image src={instagramIcon} alt="Instagram" />
-              </a>
+
+              {socialMedia[index]?.facebook && (
+                <a className="cursor-pointer" href={speaker.facebook}>
+                  <Image src={instagramIcon} alt="Instagram" />
+                </a>
+              )}
+
+              {socialMedia[index]?.linkedin && (
               <a className="cursor-pointer" href={speaker.linkedin}>
               <Image src={linkedinIcon} alt="Linkedin" />
-
               </a>
+              )}
+
+              {socialMedia[index]?.site && (
               <a className="cursor-pointer" href={speaker.lattes}>
               <Image src={linkIcon} alt="Site" />
               </a>
+              )}
             
             </div>
           </div>
