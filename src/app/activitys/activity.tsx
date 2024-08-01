@@ -46,10 +46,10 @@ const ActivityPerDay: React.FC<ActivitySession> = ({ daySession }) => {
         <div key={index} className="relative mb-4">
           <div className="horas-layout">{startTime}</div>
           <div className="flex">
-            <div
+            {/* <div
               onClick={() => handleScroll({ side: 'left' })}
               className="absolute left-0 mt-2 flex h-full cursor-pointer items-center justify-center bg-sunset-950 p-1 opacity-75"
-            >
+            > */}
               <span className="text-3xl text-white">&lt;</span>
             </div>
             <div
@@ -67,7 +67,7 @@ const ActivityPerDay: React.FC<ActivitySession> = ({ daySession }) => {
               className="absolute right-0 mt-2 flex h-full cursor-pointer items-center bg-sunset-950 p-1 opacity-75"
             >
               <span className="text-3xl text-white">&gt;</span>
-            </div>
+            {/* </div> */}
           </div>
         </div>
       ))}
