@@ -50,23 +50,23 @@ const ActivityPerDay: React.FC<ActivitySession> = ({ daySession }) => {
               onClick={() => handleScroll({ side: 'left' })}
               className="absolute left-0 mt-2 flex h-full cursor-pointer items-center justify-center bg-sunset-950 p-1 opacity-75"
             > */}
-              <span className="text-3xl text-white">&lt;</span>
-            </div>
-            <div
-              ref={scrollRef}
-              className="ml-6 flex flex-wrap gap-4 scroll-smooth "
-            >
-              {sessions.map((session) => (
-                <div key={session.id_session}>
-                  <Activity activitys={session} />
-                </div>
-              ))}
-            </div>
-            <div
-              onClick={() => handleScroll({ side: 'right' })}
-              className="absolute right-0 mt-2 flex h-full cursor-pointer items-center bg-sunset-950 p-1 opacity-75"
-            >
-              <span className="text-3xl text-white">&gt;</span>
+            <span className="text-3xl text-white">&lt;</span>
+          </div>
+          <div
+            ref={scrollRef}
+            className="ml-6 flex flex-wrap gap-4 scroll-smooth "
+          >
+            {sessions.map((session) => (
+              <div key={session.id_session}>
+                <Activity activitys={session} />
+              </div>
+            ))}
+          </div>
+          <div
+            onClick={() => handleScroll({ side: 'right' })}
+            className="absolute right-0 mt-2 flex h-full cursor-pointer items-center bg-sunset-950 p-1 opacity-75"
+          >
+            <span className="text-3xl text-white">&gt;</span>
             {/* </div> */}
           </div>
         </div>
