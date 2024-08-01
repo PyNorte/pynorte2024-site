@@ -39,7 +39,7 @@ interface Data {
   count: number
 }
 
-interface GetEventResponse {
+export interface GetEventResponse {
   event: Event
 }
 

@@ -8,9 +8,10 @@ export function even3api(path: string, init?: RequestInit) {
 
   const url = new URL(apiPrefix.concat(path), baseUrl)
 
-  return fetch(url, {
+  return fetch(url.toString(), {
     headers: {
       'Authorization-Token': env.EVEN3_API_TOKEN,
+      ...init?.headers,
     },
     ...init,
   })
