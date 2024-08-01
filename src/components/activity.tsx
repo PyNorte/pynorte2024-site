@@ -1,36 +1,35 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import { Session } from "@/app/activitys/typeSession";
+import Image from 'next/image'
+import React, { useEffect, useState } from 'react'
 
-import instagramIcon from "@/assets/socialMedia/instagram.png";
-import linkIcon from "@/assets/socialMedia/link.png";
-import linkedinIcon from "@/assets/socialMedia/linkdin.png";
-import { Facebook } from 'lucide-react';
+import { Session } from '@/app/activitys/type'
+import instagramIcon from '@/assets/socialMedia/instagram.png'
+import linkIcon from '@/assets/socialMedia/link.png'
+import linkedinIcon from '@/assets/socialMedia/linkdin.png'
 
 interface ActivityInfos {
-  activitys: Session;
+  activitys: Session
 }
 
 type SocialMediaState = {
-  facebook: boolean;
-  linkedin: boolean;
-  site: boolean;
-}[];
+  facebook: boolean
+  linkedin: boolean
+  site: boolean
+}[]
 const Activity: React.FC<ActivityInfos> = ({ activitys }) => {
   const [socialMedia, setSocialMeria] = useState<SocialMediaState>([])
 
   useEffect(() => {
-    const newSocialMedia = activitys.speakers.map(social => ({
+    const newSocialMedia = activitys.speakers.map((social) => ({
       facebook: social.facebook != null,
       linkedin: social.linkedin != null,
       site: social.lattes != null,
-    }));
-  
-    setSocialMeria(newSocialMedia);
-  }, [activitys.speakers]);
+    }))
+
+    setSocialMeria(newSocialMedia)
+  }, [activitys.speakers])
 
   return (
-    <section className="my-4 flex h-auto md:w-80 xl:w-96 w-72 flex-col items-center rounded-2xl  bg-sunset-900 p-4">
+    <section className="my-4 flex h-auto w-72 flex-col items-center rounded-2xl bg-sunset-900 p-4  md:w-80 xl:w-96">
       <h1 className="text-2xl font-semibold">{activitys.title}</h1>
       <section className="flex w-full justify-between">
         <div>
@@ -70,8 +69,7 @@ const Activity: React.FC<ActivityInfos> = ({ activitys }) => {
                 <h2 className="text-xs font-extralight">{speaker.resume}</h2>
               </div>
             </div>
-            <div className="flex justify-end m-4 gap-2">
-
+            <div className="m-4 flex justify-end gap-2">
               {socialMedia[index]?.facebook && (
                 <a className="cursor-pointer" href={speaker.facebook}>
                   <Image src={instagramIcon} alt="Instagram" />
@@ -79,23 +77,22 @@ const Activity: React.FC<ActivityInfos> = ({ activitys }) => {
               )}
 
               {socialMedia[index]?.linkedin && (
-              <a className="cursor-pointer" href={speaker.linkedin}>
-              <Image src={linkedinIcon} alt="Linkedin" />
-              </a>
+                <a className="cursor-pointer" href={speaker.linkedin}>
+                  <Image src={linkedinIcon} alt="Linkedin" />
+                </a>
               )}
 
               {socialMedia[index]?.site && (
-              <a className="cursor-pointer" href={speaker.lattes}>
-              <Image src={linkIcon} alt="Site" />
-              </a>
+                <a className="cursor-pointer" href={speaker.lattes}>
+                  <Image src={linkIcon} alt="Site" />
+                </a>
               )}
-            
             </div>
           </div>
         ))}
       </section>
     </section>
-  );
-};
+  )
+}
 
-export default Activity;
+export default Activity
