@@ -60,6 +60,8 @@ const Activity: React.FC<ActivityInfos> = ({ activitys }) => {
           <div key={speaker.id_speaker}>
             <div className="flex">
               <Image
+                height={80}
+                width={80}
                 className="mr-4 h-20 w-20 rounded-full"
                 src={speaker.photo}
                 alt="Foto do palestrante"
