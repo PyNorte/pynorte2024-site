@@ -1,6 +1,7 @@
 import FAQList from '@/components/FAQ/FAQList'
 
 import { About } from './about'
+import { EventLocation } from './eventLocation'
 import { Schedule } from './schedule'
 import { Sponsors } from './sponsors'
 import { Subscribe } from './subscribe'
@@ -21,6 +22,11 @@ export default function Home() {
       <div id="sponsors" className="pt-32">
         <Sponsors />
       </div>
+
+      <div id="sponsors" className="pt-32">
+        <EventLocation />
+      </div>
+
       <div id="FAQList" className="pt-32">
         <FAQList />
       </div>
