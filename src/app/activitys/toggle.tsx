@@ -33,6 +33,11 @@ export default function ToggleSection({ dataSession }: ToggleSectionProps) {
   const filteredSessions = dataSession
     .filter((data) => data.id_schedule === `${selectedButton}092024`)
     .flatMap((data) => data.sessions)
+    .sort((a, b) => {
+      const timeA = new Date(`1970-01-01T${a.start_time}`).getTime()
+      const timeB = new Date(`1970-01-01T${b.start_time}`).getTime()
+      return timeA - timeB
+    })
 
   return (
     <section>
