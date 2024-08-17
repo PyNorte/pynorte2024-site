@@ -29,7 +29,7 @@ export function EventLocation() {
             interior do estado.
           </p>
         </div>
-        <Link href="https://goo.gl/maps/example" target="_blank">
+        <Link href="https://maps.app.goo.gl/LQimvYx7CCUTEf1f6" target="_blank">
           <Button className="w-full sm:w-auto">Google Maps</Button>
         </Link>
       </div>
