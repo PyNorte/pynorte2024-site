@@ -25,7 +25,7 @@ export async function Subscribe() {
 
         <div className="space-y-8 text-center lg:text-left">
           <h1 className="text-3xl md:text-5xl">
-            {startDay} a {endDay} de {month}
+            {startDay} a {endDay} de {month} em Itacoatiara/AM
           </h1>
 
           <p className="leading-relaxed">
