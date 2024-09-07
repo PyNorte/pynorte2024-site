@@ -95,8 +95,12 @@ export function Header() {
                     key={link.id}
                     className={cn(
                       'cursor-pointer',
-                      pathname === link.href && 'underline',
+                      pathname === link.href &&
+                        'underline decoration-wavy underline-offset-[2px]',
                     )}
+                    style={{
+                      textDecorationSkipInk: 'none',
+                    }}
                     href={link.href}
                   >
                     <li>{link.label}</li>
