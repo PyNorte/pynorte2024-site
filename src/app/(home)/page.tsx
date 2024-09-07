@@ -24,7 +24,7 @@ export default function Home() {
         <Sponsors />
       </div>
 
-      <div id="sponsors" className="pt-32">
+      <div id="eventLocation" className="pt-32">
         <EventLocation />
       </div>
 
