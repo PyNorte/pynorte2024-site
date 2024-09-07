@@ -14,7 +14,7 @@ const links = [
   { id: 2, label: 'Calendário', href: '/activitys' },
   { id: 3, label: 'Código de conduta', href: '/conduct' },
   { id: 4, label: 'Keynotes', href: '#' },
-  { id: 5, label: 'FAQ', href: '#' },
+  { id: 5, label: 'FAQ', href: '/#FAQList' },
 ]
 
 export function Header() {
@@ -58,8 +58,12 @@ export function Header() {
                   key={link.id}
                   className={cn(
                     'cursor-pointer',
-                    pathname === link.href && 'underline',
+                    pathname === link.href &&
+                      'underline decoration-wavy underline-offset-[2px]  ',
                   )}
+                  style={{
+                    textDecorationSkipInk: 'none',
+                  }}
                   href={link.href}
                 >
                   <li>{link.label}</li>
