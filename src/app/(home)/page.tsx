@@ -1,4 +1,5 @@
 import FAQList from '@/components/FAQ/FAQList'
+import { OurContacts } from '@/components/ourContacts'
 
 import { About } from './about'
 import { EventLocation } from './eventLocation'
@@ -29,6 +30,10 @@ export default function Home() {
 
       <div id="FAQList" className="pt-32">
         <FAQList />
+      </div>
+
+      <div id="OurContacts" className="pt-32">
+        <OurContacts />
       </div>
     </div>
   )
