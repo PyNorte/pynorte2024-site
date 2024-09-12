@@ -7,6 +7,7 @@ import { LinkTitleToContent } from './link-title-to-content'
 import { TwitterX } from './twitter-x'
 
 export function OurContacts() {
+  const emailAddress = 'norte@python.org.br';
   return (
     <>
       <div className="relative mx-auto flex h-[175px] w-[80%] max-w-[600px] items-center justify-center">
@@ -50,10 +51,10 @@ export function OurContacts() {
           <div className="text-center">
             <h4 className="font-semibold text-white">Email</h4>
             <a
-              href="mailto:pynoteam@gmail.com"
+              href={`mailto:${emailAddress}`}
               className="font-bold text-[#FFBC27] transition duration-300 ease-in-out hover:border-b-2 hover:border-[#FFBC27]"
             >
-              pynoteam@gmail.com
+              {emailAddress}
             </a>
           </div>
         </div>
