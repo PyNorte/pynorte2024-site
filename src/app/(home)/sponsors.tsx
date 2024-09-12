@@ -4,6 +4,7 @@ import apyb from '@/assets/sponsors/logo-apyb.svg'
 import bemol from '@/assets/sponsors/logo-bemol.png'
 import caes from '@/assets/sponsors/logo-caes.png'
 import casi from '@/assets/sponsors/logo-casi.png'
+import eldorado from '@/assets/sponsors/logo-eldorado.png'
 import encora from '@/assets/sponsors/logo-encora.svg'
 import fpf from '@/assets/sponsors/logo-fpf-tech.svg'
 import icetUfam from '@/assets/sponsors/logo-icet.png'
@@ -60,7 +61,12 @@ const quotas: Quota[] = [
       {
         name: 'FPF Tech',
         image: fpf,
-        height: 'max-h-14',
+        height: 'max-h-16',
+      },
+      {
+        name: 'Instituto de Pesquisas Eldorado',
+        image: eldorado,
+        height: 'max-h-20',
       },
       {
         name: 'Vinta',
