@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image'
 
+import caes from '@/assets/sponsors/logo-caes.png'
 import bemol from '@/assets/sponsors/logo-bemol.png'
 import fpf from '@/assets/sponsors/logo-fpf-tech.svg'
 import icetUfam from '@/assets/sponsors/logo-icet.png'
@@ -73,6 +74,11 @@ const quotas: Quota[] = [
         name: 'ICET UFAM',
         image: icetUfam,
         height: 'max-h-32',
+      },
+      {
+        name: 'Centro Acadêmico de Engenharia de Software',
+        image: caes,
+        height: 'max-h-40',
       },
     ],
   },
