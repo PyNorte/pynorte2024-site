@@ -1,5 +1,6 @@
 import { StaticImageData } from 'next/image'
 
+import apyb from '@/assets/sponsors/logo-apyb.svg'
 import bemol from '@/assets/sponsors/logo-bemol.png'
 import caes from '@/assets/sponsors/logo-caes.png'
 import encora from '@/assets/sponsors/logo-encora.svg'
@@ -71,6 +72,11 @@ const quotas: Quota[] = [
     title: 'APOIO',
     bgColor: 'bg-forest-800',
     sponsors: [
+      {
+        name: 'Associação Python Brasil',
+        image: apyb,
+        height: 'max-h-20',
+      },
       {
         name: 'Centro Acadêmico de Engenharia de Software',
         image: caes,
