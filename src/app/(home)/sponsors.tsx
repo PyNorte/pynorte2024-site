@@ -1,7 +1,8 @@
 import { StaticImageData } from 'next/image'
 
-import caes from '@/assets/sponsors/logo-caes.png'
 import bemol from '@/assets/sponsors/logo-bemol.png'
+import caes from '@/assets/sponsors/logo-caes.png'
+import encora from '@/assets/sponsors/logo-encora.svg'
 import fpf from '@/assets/sponsors/logo-fpf-tech.svg'
 import icetUfam from '@/assets/sponsors/logo-icet.png'
 import psf from '@/assets/sponsors/logo-psf.svg'
@@ -55,14 +56,14 @@ const quotas: Quota[] = [
     bgColor: 'bg-sunset-700',
     sponsors: [
       {
-        name: 'Vinta',
-        image: vinta,
-        height: 'max-h-12',
-      },
-      {
         name: 'FPF Tech',
         image: fpf,
         height: 'max-h-14',
+      },
+      {
+        name: 'Vinta',
+        image: vinta,
+        height: 'max-h-12',
       },
     ],
   },
@@ -71,14 +72,19 @@ const quotas: Quota[] = [
     bgColor: 'bg-forest-800',
     sponsors: [
       {
-        name: 'ICET UFAM',
-        image: icetUfam,
-        height: 'max-h-32',
-      },
-      {
         name: 'Centro Acadêmico de Engenharia de Software',
         image: caes,
         height: 'max-h-40',
+      },
+      {
+        name: 'Encora',
+        image: encora,
+        height: 'max-h-40',
+      },
+      {
+        name: 'ICET UFAM',
+        image: icetUfam,
+        height: 'max-h-32',
       },
     ],
   },

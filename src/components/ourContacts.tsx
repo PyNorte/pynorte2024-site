@@ -7,7 +7,7 @@ import { LinkTitleToContent } from './link-title-to-content'
 import { TwitterX } from './twitter-x'
 
 export function OurContacts() {
-  const emailAddress = 'norte@python.org.br';
+  const emailAddress = 'norte@python.org.br'
   return (
     <>
       <div className="relative mx-auto flex h-[175px] w-[80%] max-w-[600px] items-center justify-center">
