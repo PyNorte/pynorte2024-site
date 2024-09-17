@@ -3,6 +3,7 @@ import { StaticImageData } from 'next/image'
 import apyb from '@/assets/sponsors/logo-apyb.svg'
 import bemol from '@/assets/sponsors/logo-bemol.png'
 import caes from '@/assets/sponsors/logo-caes.png'
+import casi from '@/assets/sponsors/logo-casi.png'
 import encora from '@/assets/sponsors/logo-encora.svg'
 import fpf from '@/assets/sponsors/logo-fpf-tech.svg'
 import icetUfam from '@/assets/sponsors/logo-icet.png'
@@ -81,6 +82,11 @@ const quotas: Quota[] = [
         name: 'Centro Acadêmico de Engenharia de Software',
         image: caes,
         height: 'max-h-40',
+      },
+      {
+        name: 'Centro Acadêmico de Sistemas de Informação',
+        image: casi,
+        height: 'max-h-60',
       },
       {
         name: 'Encora',
